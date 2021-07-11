@@ -1,0 +1,178 @@
+{% extends "index.html" %} {% block title %} Add Employees {% endblock %} {%
+block page_name %} Register a new Employee {% endblock %} {% block inner_page %}
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="panel panel-info">
+		<div class="panel-heading">ENTER EMPLOYEE DETAILS</div>
+		<div class="panel-body">
+			<form role="form" action="" method="post">
+				<div class="form-group">
+					<label>First Name</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addFirstName"
+						id="addFirstName"
+						required
+						pattern="[A-Za-z]{1,30}"
+						title="alphabets only (maximum 30 letters)"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Last Name</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addLastName"
+						id="addLastName"
+						required
+						pattern="[A-Za-z]{1,30}"
+						title="alphabets only (maximum 30 letters)"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Dob</label>
+					<input
+						class="form-control"
+						type="date"
+						name="addAge"
+						id="addAge"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Gender</label>
+					<div class="radio">
+						<label>
+							<input
+								type="radio"
+								name="addGender"
+								id="addGenderFemale"
+								value="female"
+								required
+							/>
+							Female
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input
+								type="radio"
+								name="addGender"
+								id="addGenderMale"
+								value="male"
+								required
+							/>
+							Male
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input
+								type="radio"
+								name="addGender"
+								id="addGenderNb"
+								value="non-binary"
+								required
+							/>
+							Non-Binary
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>E-Mail</label>
+					<input
+						class="form-control"
+						type="email"
+						name="addEmail"
+						id="addEmail"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Phone</label>
+					<input
+						class="form-control"
+						type="tel"
+						name="addPhone"
+						id="addPhone"
+						required
+						pattern="[0-9]{10}"
+						title="10 Digit Number"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Place</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addPlace"
+						id="addPlace"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Post</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addPost"
+						id="addPost"
+						required
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>PIN</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addPin"
+						id="addPin"
+						required
+						pattern="[0-9]{6}"
+						title="enter a proper pin code (hint:
+          673001)"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Username</label>
+					<input
+						class="form-control"
+						type="text"
+						name="addUsername"
+						id="addUsername"
+						required
+						pattern="[a-z_]{1-30}"
+						title="username should contain only lowercase letters and underscore"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Password</label>
+					<input
+						class="form-control"
+						type="password"
+						name="addPassword"
+						id="addPassword"
+						required
+						pattern="{8,}"
+						title="password should contain minimum 8 characters"
+					/>
+				</div>
+
+				<button type="submit" class="btn btn-success">ADD EMPLOYEE</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

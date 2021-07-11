@@ -1,0 +1,66 @@
+{% extends "index.html" %} {% block title %} Work Assignments {% endblock %} {%
+block page_name %} Work Assignments {% endblock %} {% block inner_page %}
+
+<div class="panel panel-default">
+	<div class="panel-heading">RECORD OF WORK ASSIGNMENTS</div>
+	<div class="panel-body">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hove">
+				<thead>
+					<tr>
+						<th>Work ID</th>
+						<th>Employee</th>
+						<th>Assignment</th>
+						<th>Date of Assignment</th>
+						<th>Deadline</th>
+						<th>Status</th>
+						<th>Report</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for work in works %}
+					<tr></tr>
+					<tr id="{{ work.w_id }}">
+						<td>{{ work.w_id }}</td>
+						<td class="text-capitalize">
+							{{ work.first_name }}&nbsp;{{ work.last_name }}
+						</td>
+						<td><a href="files/{{work.filename}}">{{ work.work_name }}</a></td>
+						<td>{{ work.date_assign }}</td>
+						<td>{{ work.deadline }}</td>
+						<td class="text-uppercase">{{ work.status }}</td>
+
+						{% if work.status == 'finished' %}
+						<td>
+							<a href="report?id={{work.w_id}}">
+								<button class="btn btn-info fa fa-file-text">View Report</button>
+							</a>
+						</td>
+						{% else %}
+						<td>
+							<button disabled class="btn btn-default">Report Unavailable</button>
+						</td>
+						{% endif %}
+
+						<td>
+							<a href="delete?id={{ work.w_id }}">
+								<button class="btn btn-danger fa fa-trash">REMOVE</button>
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<div class="text-info" align="center">
+				ASSIGN NEW WORK: <br />
+				<a href="register">
+					<i class="fa fa-plus fa-4x"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

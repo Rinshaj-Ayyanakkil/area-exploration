@@ -1,0 +1,37 @@
+{% extends "index.html" %} {% block title %} Edit Rescuer{% endblock %} {% block
+page_name %} Edit Rescuer Info {% endblock %} {% block inner_page %}
+
+<div class="col-md-6 col-sm-6 col-xs-12">
+	<div class="panel panel-info">
+		<div class="panel-heading">MODIFY RESCUER DETAILS</div>
+		<div class="panel-body">
+			<form role="form" action="" method="post">
+				<div class="form-group">
+					<label>Unit Name</label>
+					<input
+						class="form-control"
+						type="text"
+						name="unitName"
+						required
+						value="{{ rescuer.unit_name }}"
+					/>
+				</div>
+
+				<div class="form-group">
+					<label>Contact</label>
+					<input
+						class="form-control"
+						type="text"
+						name="contact"
+						required
+						value="{{ rescuer.contact }}"
+					/>
+				</div>
+
+				<button type="submit" class="btn btn-success fa fa-2x fa-floppy-o"></button>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

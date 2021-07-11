@@ -1,0 +1,45 @@
+{% extends "index.html" %} {% block title %} Wifi Settings {% endblock %} {%
+block page_name %} Wifi Hot-spots {% endblock %} {% block inner_page %}
+
+<div class="panel panel-default">
+	<div class="panel-heading">Wifi Hot-spots</div>
+	<div class="panel-body">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hove">
+				<thead>
+					<tr>
+						<th>wifi_id</th>
+						<th>mac_address</th>
+						<th>landmark</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for hotspot in hotspots %}
+					<tr>
+						<td>{{hotspot.wifi_id}}</td>
+						<td>{{hotspot.mac_address}}</td>
+						<td>{{hotspot.landmark}}</td>
+						<td>
+							<a href="delete?id={{hotspot.wifi_id}}">
+								<button class="btn btn-danger fa fa-trash">delete</button>
+							</a>
+							<!-- <a href="edit/{{hotspot.wifi_id}}">
+								<button class="btn btn-info fa fa-edit">edit</button>
+							</a> -->
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<div class="text-info" align="center">
+				ASSIGN NEW HOT-SPOT: <br />
+				<a href="register">
+					<i class="fa fa-plus fa-4x"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

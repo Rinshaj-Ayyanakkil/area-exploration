@@ -1,0 +1,45 @@
+{% extends "index.html" %} {% block title %} Work Report {% endblock %} {% block
+page_name %} Work Report {% endblock %} {% block inner_page %}
+
+<div class="col-md-4 col-sm-4">
+	<div class="panel panel-warning">
+		<div class="panel-heading">
+			<a class="btn-link" href="/works#{{ work.w_id }}">
+				ASSIGNMENT: {{work.work_name}}
+			</a>
+			<br />
+			from:
+			<label class="text-info">{{ work.first_name }} {{work.last_name}}</label>
+		</div>
+		<div class="panel-body">
+			<label class="text-warning"> WORK ID: </label>
+			<label class="pull-right text-info"> {{work.w_id}} </label> <br />
+
+			<label class="text-warning"> DEADLINE: </label>
+			<label class="pull-right text-info"> {{work.deadline}} </label> <br />
+
+			<label class="text-warning"> SUBMISSION DATE: </label>
+			<label class="pull-right text-info"> {{work.date_submit}} </label> <br />
+
+			<label class="text-warning"> REMARKS: </label>
+			<label class="pull-right text-info">
+				{% if work.date_submit>work.date_assign %}
+				<label class="text-danger"> DEADLINE EXCEEDED </label>
+				{% else %}
+				<label class="text-success">SUBMISSION ON-TIME</label>
+				{% endif %}
+			</label>
+		</div>
+		<div class="panel-footer">
+			<a
+				style="color: #007bb6 !important"
+				href="static/reports/{{work.report}}"
+				href="{{ url_for('static', filename='/reports/work.report') }}"
+				download
+				>DOWNLOAD {{ work.report }}</a
+			>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "index.html" %} {% block title %} Logout {% endblock %} {% block
+page_name %} Logout {% endblock %} {% block inner_page %}
+
+<div class="col-md-4">
+	<div class="alert alert-danger text-center" align="center">
+		<h4>ARE YOU SURE?</h4>
+		<hr />
+		<i class="fa fa-sign-out fa-4x"></i><br />
+		Do you want to logout from
+		<label class="text-info"> {{ user.username }}'s </label> session?
+		<hr />
+		<a href="logout/confirm" class="btn btn-danger">CONFIRM LOGOUT</a>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+#floor-container {
+	background-color: #dddddd;
+	padding: 1rem;
+	margin-top: 1rem;
+}
+
+.floor {
+	padding: 5rem;
+	background-color: #0d1117;
+	border: 1px solid black;
+}
+
+.hotspot {
+	padding: 1rem;
+	background-color: #58a6ff;
+	width: fit-content;
+	height: fit-content;
+	cursor: move;
+	z-index: 1;
+}
+
+.node {
+	position: absolute;
+	padding: 1rem;
+	background-color: yellow;
+	width: fit-content;
+	height: fit-content;
+}
+
+.hotspot.dragging {
+	opacity: 0.5;
+	background-color: red;
+}
+
+.hotspot.dragging.valid {
+	background-color: green;
+	cursor: copy;
+}
+
+#map-gui-toolbar {
+	padding: 1rem;
+	background-color: #292929;
+	color: white;
+}

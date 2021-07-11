@@ -1,0 +1,47 @@
+{% extends "index.html" %} {% block title %} Manage Employees {% endblock %} {%
+block page_name %} Employees {% endblock %} {% block inner_page %}
+
+<div class="text-info text-capitalize" style="padding: 2rem">
+	ADD NEW EMPLOYEE: <br />
+	<a href="register">
+		<i class="fa fa-plus fa-4x"></i>
+	</a>
+</div>
+
+{% for employee in employees %}
+<div class="col-md-4" xmlns="http://www.w3.org/1999/html">
+	<div class="text-left alert" style="border-color: #00ca79">
+		<i class="fa fa-user fa-3x"></i>
+
+		<h4>
+			<label class="text-capitalize">
+				{{ employee.first_name + " "+ employee.last_name }}
+			</label>
+		</h4>
+		<hr />
+		<label class="text-warning text-uppercase"> DOB: </label>
+		<label class="text-info text-capitalize">{{ employee.dob}}</label><br />
+		<label class="text-warning text-uppercase">GENDER: </label>
+		<label class="text-info text-capitalize"> {{ employee.gender }} </label><br />
+		<label class="text-warning text-uppercase"> ADDRESS: </label>
+		<label class="text-info text-capitalize"> {{ employee.place}},</label><br />
+		<label class="text-info text-capitalize"> {{ employee.post}} P.O,</label
+		><br />
+		<label class="text-info text-capitalize"> {{ employee.pin}}</label><br />
+		<label class="text-warning text-uppercase"> PHONE: </label>
+		<label class="text-info"> {{ employee.phone |string }}</label><br />
+		<label class="text-warning text-uppercase"> E-MAIL: </label>
+		<label class="text-info"> {{ employee.email }}</label><br />
+		<hr />
+
+		<a href="delete?id={{ employee.e_id }}">
+			<button class="btn btn-danger fa fa-trash">REMOVE</button>
+		</a>
+
+		<a href="edit?id={{ employee.e_id }}">
+			<button class="btn btn-info fa fa-edit">EDIT</button>
+		</a>
+	</div>
+</div>
+
+{% endfor %} {% endblock %}

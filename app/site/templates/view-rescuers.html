@@ -1,0 +1,32 @@
+{% extends "index.html" %} {% block title %} Rescuers {% endblock %} {% block
+page_name %} Rescuers {% endblock %} {% block inner_page %}
+
+<div class="text-info text-capitalize" style="padding: 2rem">
+	ADD NEW RESCUER: <br />
+	<a href="register">
+		<i class="fa fa-plus fa-4x"></i>
+	</a>
+</div>
+
+{% for rescuer in rescuers %}
+
+<div class="col-md-4" xmlns="http://www.w3.org/1999/html">
+	<div class="text-left alert" style="border-color: #00ca79">
+		<div class="text-left alert" style="border-color: #00ca79">
+			<i class="fa fa-building fa-3x"></i>
+			<h4><label class="text-capitalize"> {{ rescuer.unit_name }} </label></h4>
+			<hr />
+			<label class="text-warning text-uppercase"> Contact: </label>
+			<label class="text-info text-capitalize">{{ rescuer.contact }}</label><br />
+		</div>
+
+		<a href="edit?id={{rescuer.unit_id}}">
+			<button class="btn btn-info fa fa-edit">EDIT</button>
+		</a>
+		<a href="delete?id={{ rescuer.unit_id }}">
+			<button class="btn btn-danger fa fa-trash">REMOVE</button>
+		</a>
+	</div>
+</div>
+
+{% endfor %} {% endblock %}

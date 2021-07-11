@@ -1,0 +1,54 @@
+{% extends "index.html" %} passing from flask app to javascript {% block title
+%} Routes {% endblock %} {% block page_name %} Safe Routes {% endblock %} {%
+block inner_page %}
+
+<div id="map-gui-wrapper">
+	<div id="map-gui-toolbar">
+		<i class="fa fa-plus-circle fa-2x" id="add-floor-button"></i>
+		<i class="fa fa-floppy-o fa-2x" id="save-button"></i>
+	</div>
+
+	<div id="floor-container"></div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Paths</div>
+
+	<div class="panel-body">
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hove">
+				<thead>
+					<tr>
+						<th>Source</th>
+
+						<th>Destination</th>
+
+						<th>Direction</th>
+
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{% for path in paths %}
+					<tr>
+						<td>{{ path.source }}</td>
+
+						<td>{{ path.destination }}</td>
+
+						<td>{{ path.direction }}</td>
+
+						<td></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script>
+	// let pathDatabase = {{ paths|tojson }};
+	// let wifiList = {{ hotspots|tojson }};
+</script>
+{% endblock %}
